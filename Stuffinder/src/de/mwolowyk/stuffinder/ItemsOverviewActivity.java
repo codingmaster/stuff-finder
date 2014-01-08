@@ -94,7 +94,7 @@ public class ItemsOverviewActivity extends ListActivity implements
 
 		    // Fields from the database (projection)
 		    // Must include the _id column for the adapter to work
-		    String[] from = new String[] { ItemTable.ITEM_NAME, ItemTable.ITEM_DESCRIPTION };
+		    String[] from = new String[] { ItemTable.NAME, ItemTable.DESCRIPTION };
 		    // Fields on the UI to which we map
 		    int[] to = new int[] { R.id.name };
 
@@ -115,7 +115,7 @@ public class ItemsOverviewActivity extends ListActivity implements
 	// creates a new loader after the initLoader () call
 	  @Override
 	  public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-	    String[] projection = { ItemTable.ITEM_ID, ItemTable.ITEM_NAME, ItemTable.ITEM_DESCRIPTION};
+	    String[] projection = { ItemTable.ID, ItemTable.NAME, ItemTable.DESCRIPTION};
 	    CursorLoader cursorLoader = new CursorLoader(this,
 	        MyContentProvider.CONTENT_URI, projection, null, null, null);
 	    return cursorLoader;

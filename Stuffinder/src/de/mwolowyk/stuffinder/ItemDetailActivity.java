@@ -82,14 +82,14 @@ public class ItemDetailActivity extends Activity {
 		}
 
 	private void fillData(Uri uri) {
-	    String[] projection = { ItemTable.ITEM_NAME,
-	        ItemTable.ITEM_DESCRIPTION, ItemTable.ITEM_CATEGORY };
+	    String[] projection = { ItemTable.NAME,
+	        ItemTable.DESCRIPTION, ItemTable.CATEGORY };
 	    Cursor cursor = getContentResolver().query(uri, projection, null, null,
 	        null);
 	    if (cursor != null) {
 	      cursor.moveToFirst();
 	      String category = cursor.getString(cursor
-	          .getColumnIndexOrThrow(ItemTable.ITEM_CATEGORY));
+	          .getColumnIndexOrThrow(ItemTable.CATEGORY));
 
 	      for (int i = 0; i < mCategory.getCount(); i++) {
 
@@ -100,9 +100,9 @@ public class ItemDetailActivity extends Activity {
 	      }
 
 	      mTitleText.setText(cursor.getString(cursor
-	          .getColumnIndexOrThrow(ItemTable.ITEM_NAME)));
+	          .getColumnIndexOrThrow(ItemTable.NAME)));
 	      mBodyText.setText(cursor.getString(cursor
-	          .getColumnIndexOrThrow(ItemTable.ITEM_DESCRIPTION)));
+	          .getColumnIndexOrThrow(ItemTable.DESCRIPTION)));
 
 	      // always close the cursor
 	      cursor.close();
@@ -134,9 +134,9 @@ public class ItemDetailActivity extends Activity {
 	    }
 
 	    ContentValues values = new ContentValues();
-	    values.put(ItemTable.ITEM_CATEGORY, category);
-	    values.put(ItemTable.ITEM_NAME, summary);
-	    values.put(ItemTable.ITEM_DESCRIPTION, description);
+	    values.put(ItemTable.CATEGORY, category);
+	    values.put(ItemTable.NAME, summary);
+	    values.put(ItemTable.DESCRIPTION, description);
 
 	    if (itemUri == null) {
 	      // New item
