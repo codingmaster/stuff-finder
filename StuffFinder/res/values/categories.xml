@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>@string/food_category</item>
+        <item>@string/electro_category</item>
+        <item>@string/book_category</item>
+        <item>@string/other_category</item>
+    </string-array>
+    
+</resources>
