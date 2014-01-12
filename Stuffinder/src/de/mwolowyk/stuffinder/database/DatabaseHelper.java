@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "stuffinder.db";
-	  private static final int DATABASE_VERSION = 3;
+	  private static final int DATABASE_VERSION = 4;
 
 	  public DatabaseHelper(Context context) {
 	    super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	  public void onCreate(SQLiteDatabase database) {
 		  PlaceTable.onCreate(database);
 		  ItemTable.onCreate(database);
+		  ItemPlaceTable.onCreate(database);
 		  
 	    
 	  }
@@ -29,6 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	      int newVersion) {
 		PlaceTable.onUpgrade(database, oldVersion, newVersion);
 	    ItemTable.onUpgrade(database, oldVersion, newVersion);
+	    ItemPlaceTable.onUpgrade(database, oldVersion, newVersion);
 	  }
 
 }
