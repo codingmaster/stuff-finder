@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:debuggable="true" >
         <activity
-            android:name="ItemsOverviewActivity"
+            android:name=".activity.ItemsOverviewActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,17 +24,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ItemDetailActivity"
+            android:name=".activity.ItemDetailActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" >
         </activity>
         
          <activity
-            android:name="PlacesOverviewActivity"
+            android:name=".activity.PlacesOverviewActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="PlaceDetailActivity"
+            android:name=".activity.PlaceDetailActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        <activity android:name=".activity.ItemSearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
         
         <provider android:name=".contentprovider.ItemContentProvider" android:authorities="de.mwolowyk.stuffinder.contentprovider.items"/>

@@ -2,10 +2,17 @@
 <resources>
 
     <string name="app_name">Поиск вещей</string>
+    <string name="search_hint">что будем искать?</string>
+    <string name="search">Поиск</string>
+    
     <string name="action_settings">Установки</string>
-    <string name="hello_world">Hello world!</string>
     <string name="insert">Добавить</string>
     <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
+    <string name="accept">OK</string>
+    <string name="cancel">Отмена</string>
+	
+    
     
     <string name="food_category">Еда</string>
     <string name="electro_category">Прибор</string>
@@ -18,10 +25,6 @@
     <string name="description">Описание</string>
     <string name="name">Название</string>
     
-    <string name="save">Сохранить</string>
-    <string name="accept">OK</string>
-    <string name="cancel">Отмена</string>
-	
     <string name="no_items">Ничего нет</string>
     
     <string name="places">Места</string>

@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import de.mwolowyk.stuffinder.ItemDetailActivity;
+import de.mwolowyk.stuffinder.activity.ItemDetailActivity;
 
 public class ItemDetailActivityTest extends
 		ActivityInstrumentationTestCase2<ItemDetailActivity> {
@@ -52,7 +52,7 @@ public class ItemDetailActivityTest extends
 //		assertEquals(mPlanetData.getCount(), ADAPTER_COUNT);
 //	}
 
-	public void testSpinnerUI() {
+	public void testNewItem() {
 
 		mActivity.runOnUiThread(new Runnable() {
 			public void run() {
