@@ -4,20 +4,17 @@ var dbCreated = false;
 var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
 
 
-function showPage(){
+function showElements(){
     if (!dbCreated){
         db.transaction(populateDB, transaction_error, populateDB_success);
         dbCreated = true;
     }
     var urlPage = getUrlVars()[0].split("#")[1];
-    var getElements;
-    if(urlPage === "places"){
-        getElements = getPlaces;
-    }
-    else{
-        getElements = getItems;
-    }
     db.transaction(getElements, transaction_error);
+}
+
+function showElement(){
+    db.transaction(getElement, transaction_error);
 }
 
 function addElement(){
@@ -36,7 +33,7 @@ function addElement(){
 function showDeletePopup(element){
   //  alert("Popup " + element);
     if(element !== undefined){
-        alert("popup for element " + element.name);
+  //      alert("popup for element " + element.name);
  //       $("#popupDialog").popup("open");
     }
     return false;
@@ -51,7 +48,7 @@ function transaction_error(tx, error) {
 function populateDB_success() {
 	$('#busy').hide();
 	dbCreated = true;
-    db.transaction(getItems, transaction_error);
+    db.transaction(getElements, transaction_error);
 }
 
 function populateDB(tx){

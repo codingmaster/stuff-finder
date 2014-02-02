@@ -20,7 +20,7 @@
     <div id="busy"/>Loading...</div>
 
      <!--Page  Items Overview-->
-    <div data-role="page" id="items" onload="showItems()">
+    <div data-role="page" id="items">
             <div data-role="header" id="header" class="header" data-position="fixed">
                 <h1>Items List</h1>
                 <a href="#places" data-icon="search">Places</a>
@@ -73,7 +73,7 @@
     </div>
 
     <!--Page Place Overview-->
-    <div data-role="page" id="places" onload="showPlaces()">
+    <div data-role="page" id="places">
             <div data-role="header" id="header" class="header" data-position="fixed">
                 <h1>Places List</h1>
                 <a href="#items" data-icon="grid">Items</a>
@@ -113,7 +113,7 @@
     </div>
 
     <script>
-        showPage();
+        showElements();
     </script>
 
     <!-- Delete dialog -->

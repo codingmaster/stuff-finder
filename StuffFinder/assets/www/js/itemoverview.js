@@ -8,11 +8,11 @@ function transaction_error(tx, error) {
 function populateDB_success() {
 	$('#busy').hide();
 	dbCreated = true;
-    db.transaction(getItems, transaction_error);
+    db.transaction(getElements, transaction_error);
 }
 
 
-function getItems(tx) {
+function getElements(tx) {
 	var sql = "select i.id, i.name, i.category, i.description, i.picture, p.name place " + 
 				"from items i left join places p on i.placeId = p.id " +
 				"group by i.name order by i.category";
@@ -20,7 +20,8 @@ function getItems(tx) {
 }
 
 
-function addItem(tx){
+
+function addElement(tx){
 
 	var name = $("#item-name").val();
 	var category = $("#item-category").val(); 
@@ -38,7 +39,7 @@ function getItems_success(tx, results) {
     var len = results.rows.length;
     for (var i=0; i<len; i++) {
     	var item = results.rows.item(i);
-		$('#itemList').append('<li><a href="itemdetails.html?id=' + item.id + '">' +
+		$('#itemList').append('<li><a href="itemdetails.html?id=' + item.id + '" rel="external">' +
 				'<img src="pics/' + item.picture + '" class="list-icon"/>' +
 				'<p class="line1">' + item.name +  '</p>' +
 				'<p class="line2">' + item.category + '</p>' +
@@ -46,13 +47,9 @@ function getItems_success(tx, results) {
 				'</a></li>');
     }
     $("li a").bind( "taphold", function() {showDeletePopup(item); return false});
-	setTimeout(function(){
-		scroll.refresh();
-	},100);
-	db = null;
 }
 
-function getItem(tx) {
+function getElement(tx) {
 	$('#busy').show();
 	var sql = "select i.id, i.name, i.category, i.description, i.picture, p.name place, p.id placeid " +
 				"from items i left join places p on p.id = i.placeId " +
@@ -67,14 +64,10 @@ function getItem_success(tx, results) {
 		'<li><h3>' + item.name + '</h3></li>' +
 		'<li><img class="detailsPic" src="' + 'pics/' + item.picture + '"/></li>' + 
 		'<li><p>Description: ' +  item.description + '<p/></li>' + 
-		'<li><a href="placedetails.html?id=' + item.placeid + '">' + 'Place: '+ item.place + '</a></li>'
+		'<li><a href="placedetails.html?id=' + item.placeid + '" rel="external">' + 'Place: '+ item.place + '</a></li>'
 
 
 		);
-	setTimeout(function(){
-		scroll.refresh();
-	});
-	db = null;
 }
 
 

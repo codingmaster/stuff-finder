@@ -1,12 +1,44 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Places Directory</title>
-    
-    
+        <title>Item Directory</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link rel="stylesheet" href="libs/jquery.mobile.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+         <script src="libs/phonegap.js"></script>
+        <script src="libs/jquery.js"></script>
+        <script src="libs/jquery.mobile.js"></script>
+        <script src="libs/iscroll.js"></script>
     </head>
-
+    
     <body>
+        
+    <div data-role="page">   
+	 <div data-role="header" id="header" class="header" data-position="fixed">
+		<h1>Item Details</h1>
+		<a data-rel="back" data-icon="back">Back</a>
+		
+	</div>
 
-        <h1> IT works! </h1>
+	<div id="wrapper" data-role="content">
+ 		  		
+			<div id="itemDetails">
+ 		  		<img id="itemPic"/>
+	       		<h3 id="itemName"></h3>
+	       		<p id="itemCategory"></p>
+	       		<p id="itemDescription"></p>
+	       		<p id="itemPlace"></p>
+	       	</div>
+	</div>
+	</div>
+
+	<div id="busy"/>Loading...</div>
+
+	<script src="js/init.js"></script>
+    <script src="js/itemoverview.js"></script>
+	<script>
+		showElement();
+	</script>
     </body>
+
+</html>
