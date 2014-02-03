@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Place Directory</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        
+ 		<link rel="stylesheet" href="libs/jquery.mobile.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+         <script src="libs/phonegap.js"></script>
+        <script src="libs/jquery.js"></script>
+        <script src="libs/jquery.mobile.js"></script>
+        <script src="libs/iscroll.js"></script>
+    </head>
+    
+    <body>
+    
+    <div data-role="page">
+	<div id="header" class="header" data-role="header">
+		<a data-rel="back" data-icon="back">Back</a>
+		<h1>Place Details</h1>
+	</div>
+
+	<div id="wrapper">
+	  		<div id="placeDetails">
+ 		  		<img id="placePic"/>
+	       		<h3 id="placeName"></h3>
+	       		<p id="placeDescription"></p>
+	  		</div> 
+	</div>
+	</div>
+	<div id="busy"/>Loading...</div>
+
+	<script src="js/init.js"></script>
+    <script src="js/placeoverview.js"></script>
+	<script>
+		showElement();
+	</script>
+    </body>
+
+</html>
